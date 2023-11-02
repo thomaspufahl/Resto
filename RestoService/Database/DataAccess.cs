@@ -9,6 +9,7 @@ namespace RestoService.Database
 {
     internal class DataAccess
     {
+        private readonly string _ConnectionString = "server=localhost, 1433; database=Resto; user=sa; password=ThomasPufahl1525";
         private SqlConnection _Conex;
         private SqlCommand _Cmd;
 
@@ -19,7 +20,7 @@ namespace RestoService.Database
             _Conex = new SqlConnection();
             _Cmd = new SqlCommand();
 
-            _Conex.ConnectionString = "server=localhost, 1433; database=Resto; user=sa; password=ThomasPufahl1525";
+            _Conex.ConnectionString = _ConnectionString;
         }
 
         public void SetQuery(string query)
