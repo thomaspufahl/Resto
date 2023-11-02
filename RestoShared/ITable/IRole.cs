@@ -9,9 +9,6 @@ namespace RestoShared.ITable
 {
     public interface IRole
     {
-        int RoleId { get; }
-        string Name { get; }
-        string Description { get; }
         List<RoleDTO> GetAll();
     }
 }
