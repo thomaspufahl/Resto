@@ -24,7 +24,7 @@ namespace RestoService.Service
 
             try
             {
-                db.SetQuery("EXEC getRole");
+                db.SetProc("getRole");
                 db.Execute();
 
                 while(db.Reader.Read())
