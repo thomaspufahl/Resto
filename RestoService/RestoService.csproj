@@ -46,6 +46,11 @@
     <Compile Include="Database\DataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\RestoShared\RestoShared.csproj">
+      <Project>{b14a69a4-c037-4c19-b176-c75f66f0b33e}</Project>
+      <Name>RestoShared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
