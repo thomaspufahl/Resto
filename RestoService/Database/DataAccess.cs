@@ -29,6 +29,12 @@ namespace RestoService.Database
             _Cmd.CommandText = query;
         }
 
+        public void SetProc(string procName)
+        {
+            _Cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            _Cmd.CommandText = procName;
+        }
+
         public void Execute()
         {
             ExecuteReader();
