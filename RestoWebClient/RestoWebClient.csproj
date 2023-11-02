@@ -105,6 +105,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RestoService\RestoService.csproj">
+      <Project>{96239061-6b33-4ae7-8692-3f551d9ece2b}</Project>
+      <Name>RestoService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestoShared\RestoShared.csproj">
+      <Project>{b14a69a4-c037-4c19-b176-c75f66f0b33e}</Project>
+      <Name>RestoShared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
