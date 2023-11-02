@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoShared", "RestoShared\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoService", "RestoService\RestoService.csproj", "{96239061-6B33-4AE7-8692-3F551D9ECE2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoWebClient", "RestoWebClient\RestoWebClient.csproj", "{2289B757-A00A-4508-9BD9-377999791EFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{96239061-6B33-4AE7-8692-3F551D9ECE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96239061-6B33-4AE7-8692-3F551D9ECE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96239061-6B33-4AE7-8692-3F551D9ECE2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2289B757-A00A-4508-9BD9-377999791EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2289B757-A00A-4508-9BD9-377999791EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2289B757-A00A-4508-9BD9-377999791EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2289B757-A00A-4508-9BD9-377999791EFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
