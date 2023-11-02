@@ -9,9 +9,11 @@ namespace RestoService.Database
     internal class Context
     {
         private static readonly Context _Instance = new Context();
-        
+        public DataAccess Db { get; private set; }
+
         private Context()
         {
+            Db = new DataAccess();
         }
 
         public static Context Instance
