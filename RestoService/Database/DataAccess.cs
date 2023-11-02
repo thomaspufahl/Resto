@@ -33,9 +33,9 @@ namespace RestoService.Database
         {
             ExecuteReader();
         }
-        public void Execute(bool isAction)
+        public void Execute(bool isNonQuery)
         {
-            if (isAction)
+            if (isNonQuery)
             {
                 ExecuteNonQuery();
             }
