@@ -31,17 +31,17 @@ namespace RestoService.Database
 
         public void Execute()
         {
-            ExecuteSelectionQuery();
+            ExecuteReader();
         }
         public void Execute(bool isAction)
         {
             if (isAction)
             {
-                ExecuteActionQuery();
+                ExecuteNonQuery();
             }
             else
             {
-                ExecuteSelectionQuery();
+                ExecuteReader();
             }
         }
 
@@ -52,7 +52,7 @@ namespace RestoService.Database
             _Conex.Close();
         }
 
-        private void ExecuteSelectionQuery()
+        private void ExecuteReader()
         {
             _Cmd.Connection = _Conex;
 
@@ -68,7 +68,7 @@ namespace RestoService.Database
             }
         }
 
-        private void ExecuteActionQuery()
+        private void ExecuteNonQuery()
         {
             _Cmd.Connection = _Conex;
 
