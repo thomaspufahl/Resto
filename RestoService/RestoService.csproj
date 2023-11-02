@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RestoManager.cs" />
+    <Compile Include="RestoDataManager.cs" />
     <Compile Include="Database\Context.cs" />
     <Compile Include="Database\DataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

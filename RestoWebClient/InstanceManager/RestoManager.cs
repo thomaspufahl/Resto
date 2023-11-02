@@ -7,16 +7,16 @@ using System.Web;
 
 namespace RestoWebClient.InstanceManager
 {
-    public class RestoDataManager
+    public class RestoManager
     {
-        private static IRestoManager _Instance;
-        public static IRestoManager Data
+        private static IRestoDataManager _Instance;
+        public static IRestoDataManager Data
         {
             get
             {
                 if (_Instance == null)
                 {
-                    _Instance = new RestoManager();
+                    _Instance = new RestoDataManager();
                 }
                 return _Instance;
             }

@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace RestoService
 {
-    public class RestoManager : IRestoManager
+    public class RestoDataManager : IRestoDataManager
     {
         private RoleService _RoleService;
         public IRole Role { get { return _RoleService; } }
 
-        public RestoManager()
+        public RestoDataManager()
         {
             _RoleService = new RoleService();
         }

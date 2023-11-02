@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\RoleDTO.cs" />
-    <Compile Include="IRestoManager.cs" />
+    <Compile Include="IRestoDataManager.cs" />
     <Compile Include="ITable\IRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

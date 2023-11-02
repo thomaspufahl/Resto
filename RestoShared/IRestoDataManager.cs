@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestoShared
 {
-    public interface IRestoManager
+    public interface IRestoDataManager
     {
         IRole Role { get; }
     }
