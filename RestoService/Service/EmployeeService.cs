@@ -15,11 +15,9 @@ namespace RestoService.Service
     internal class EmployeeService : IEmployee
     {
         private readonly DataAccess db;
-
         private bool _IsInitialized = false;
 
         public int EmployeeId { get; private set; }
-
         public string EmployeeNumber { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -75,7 +73,7 @@ namespace RestoService.Service
                         LastName = db.Reader.GetString(3),
                         RoleId = db.Reader.GetInt32(4),
                         IsActive = db.Reader.GetBoolean(5)
-                    }); 
+                    });
                 }
 
                 return EmployeeList;

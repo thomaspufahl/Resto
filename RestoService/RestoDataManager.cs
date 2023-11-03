@@ -12,16 +12,14 @@ namespace RestoService
     public class RestoDataManager : IRestoDataManager
     {
         private RoleService _RoleService;
-        public IRole Role { get { return _RoleService; } }
-
         private EmployeeService _EmployeeService;
 
+        public IRole Role { get { return _RoleService; } }
         public IEmployee Employee { get { return _EmployeeService; } }
 
         public RestoDataManager()
         {
             _RoleService = new RoleService();
-
             _EmployeeService = new EmployeeService();
         }
     }
