@@ -71,6 +71,7 @@
     <Content Include="Global.asax" />
     <Content Include="viewEmpleados.aspx" />
     <Content Include="viewPedidos.aspx" />
+    <Content Include="viewProductos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="viewPedidos.aspx.designer.cs">
       <DependentUpon>viewPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewProductos.aspx.cs">
+      <DependentUpon>viewProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewProductos.aspx.designer.cs">
+      <DependentUpon>viewProductos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -29,7 +29,7 @@
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
                     <a href="viewEmpleados.aspx" class="text-sm font-semibold leading-6 text-gray-900">Empleados </a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Productos</a>
+                    <a href="viewProductos.aspx" class="text-sm font-semibold leading-6 text-gray-900">Productos</a>
                     <a href="viewPedidos.aspx" class="text-sm font-semibold leading-6 text-gray-900">Pedidos</a>
                     <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Reportes</a>
                 </div>
