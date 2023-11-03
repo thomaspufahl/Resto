@@ -82,6 +82,9 @@ namespace RestoService.Service
             catch (Exception ex)
             {
                 throw new Exception("Error at getAll method", ex);
+            } finally
+            {
+                db.CloseConnection();
             }
         }
 
