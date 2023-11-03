@@ -72,6 +72,7 @@
     <Content Include="viewEmpleados.aspx" />
     <Content Include="viewPedidos.aspx" />
     <Content Include="viewProductos.aspx" />
+    <Content Include="viewReportes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="viewProductos.aspx.designer.cs">
       <DependentUpon>viewProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewReportes.aspx.cs">
+      <DependentUpon>viewReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewReportes.aspx.designer.cs">
+      <DependentUpon>viewReportes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
