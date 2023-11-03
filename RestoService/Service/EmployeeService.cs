@@ -71,9 +71,10 @@ namespace RestoService.Service
                     {
                         EmployeeId = db.Reader.GetInt32(0),
                         EmployeeNumber = db.Reader.GetString(1),
-                        FirstName = db.Reader.GetString(1),
-                        LastName = db.Reader.GetString(2),
-                        RoleId = db.Reader.GetInt32(0),   
+                        FirstName = db.Reader.GetString(2),
+                        LastName = db.Reader.GetString(3),
+                        RoleId = db.Reader.GetInt32(4),
+                        IsActive = db.Reader.GetBoolean(5)
                     }); 
                 }
 
