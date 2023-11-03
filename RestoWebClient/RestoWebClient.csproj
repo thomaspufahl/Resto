@@ -68,7 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="EmpleadosForm.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="LoginForm.aspx" />
+    <Content Include="PedidosForm.aspx" />
+    <Content Include="ProductosForm.aspx" />
+    <Content Include="RegisterForm.aspx" />
     <Content Include="viewEmpleados.aspx" />
     <Content Include="viewPedidos.aspx" />
     <Content Include="viewProductos.aspx" />
@@ -83,11 +88,46 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmpleadosForm.aspx.cs">
+      <DependentUpon>EmpleadosForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpleadosForm.aspx.designer.cs">
+      <DependentUpon>EmpleadosForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="InstanceManager\RestoManager.cs" />
+    <Compile Include="LoginForm.aspx.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForm.aspx.designer.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosForm.aspx.cs">
+      <DependentUpon>PedidosForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosForm.aspx.designer.cs">
+      <DependentUpon>PedidosForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosForm.aspx.cs">
+      <DependentUpon>ProductosForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosForm.aspx.designer.cs">
+      <DependentUpon>ProductosForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterForm.aspx.cs">
+      <DependentUpon>RegisterForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.aspx.designer.cs">
+      <DependentUpon>RegisterForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Resto.Master.cs">
       <DependentUpon>Resto.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

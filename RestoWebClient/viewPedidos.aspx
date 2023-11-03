@@ -3,4 +3,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1 class="text-2xl italic">Pedidos</h1>
+    <span><a href="PedidosForm.aspx" class="underline" >Pedidos form</a></span>
 </asp:Content>
