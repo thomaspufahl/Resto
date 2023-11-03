@@ -10,5 +10,7 @@ namespace RestoShared
     public interface IRestoDataManager
     {
         IRole Role { get; }
+
+        IEmployee Employee { get; }
     }
 }
