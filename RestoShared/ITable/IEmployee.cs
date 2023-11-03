@@ -23,18 +23,15 @@ namespace RestoShared.ITable
         void Initialize(EmployeeDTO employeeDTO);
 
         int Add();
+        List<EmployeeDTO> GetAll();
+        EmployeeDTO GetById();
 
         void Update();
 
-        EmployeeDTO GetById();
-
         int Activate();
 
-        int Desactivate();
+        int Deactivate();
         
         void Delete();
-
-        List<EmployeeDTO> GetAll();
-
     }
 }
