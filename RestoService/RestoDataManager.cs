@@ -14,9 +14,15 @@ namespace RestoService
         private RoleService _RoleService;
         public IRole Role { get { return _RoleService; } }
 
+        private EmployeeService _EmployeeService;
+
+        public IEmployee Employee { get { return _EmployeeService; } }
+
         public RestoDataManager()
         {
             _RoleService = new RoleService();
+
+            _EmployeeService = new EmployeeService();
         }
     }
 }
