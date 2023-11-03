@@ -27,6 +27,10 @@ namespace RestoService.Service
 
         public bool IsActive { get; private set; }
 
+        public EmployeeService()
+        {
+            db = Context.Instance.Db;
+        }
 
         private void CheckInitialized()
         {
