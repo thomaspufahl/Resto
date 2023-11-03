@@ -33,7 +33,8 @@ namespace RestoService.Service
                     {
                         RoleId = db.Reader.GetInt32(0),
                         Name = db.Reader.GetString(1),
-                        Description = db.Reader.GetString(2)
+                        Description = db.Reader.GetString(2),
+                        IsActive = db.Reader.GetBoolean(3)
                     });
                 }
 
