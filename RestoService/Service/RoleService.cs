@@ -15,7 +15,7 @@ namespace RestoService.Service
 
         public RoleService()
         {
-            db = Context.Instance.Db;
+            db = new DataAccess();
         }
 
         public List<RoleDTO> GetAll()
@@ -47,7 +47,6 @@ namespace RestoService.Service
             {
                 db.CloseConnection();
             }
-
         }
     }
 }

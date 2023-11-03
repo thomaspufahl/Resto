@@ -27,7 +27,7 @@ namespace RestoService.Service
 
         public EmployeeService()
         {
-            db = Context.Instance.Db;
+            db = new DataAccess();
         }
 
         private void CheckInitialized()
