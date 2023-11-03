@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="viewEmpleados.aspx" />
     <Content Include="viewPedidos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="Resto.Master.designer.cs">
       <DependentUpon>Resto.Master</DependentUpon>
+    </Compile>
+    <Compile Include="viewEmpleados.aspx.cs">
+      <DependentUpon>viewEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewEmpleados.aspx.designer.cs">
+      <DependentUpon>viewEmpleados.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewPedidos.aspx.cs">
       <DependentUpon>viewPedidos.aspx</DependentUpon>
