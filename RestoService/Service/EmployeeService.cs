@@ -104,7 +104,7 @@ namespace RestoService.Service
             throw new NotImplementedException();
         }
 
-        public int Desactivate()
+        public int Deactivate()
         {
             throw new NotImplementedException();
         }
