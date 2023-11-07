@@ -68,5 +68,46 @@ namespace RestoService.Service
                 db.CloseConnection();
             }
         }
+
+        /// <summary>
+        /// Returns a RoleDTO object obtained from the database.
+        /// Initializes the Role fields with the values obtained from the database.
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns>
+        /// A RoleDTO obtained from the database.
+        /// </returns>
+        /// <exception cref="Exception"></exception>
+        public RoleDTO GetById(int roleId)
+        {
+            RoleDTO roleDTO = new RoleDTO();
+
+            try
+            {
+                db.SetProc("getRoleById");
+                db.SetParam("@roleId", roleId);
+                db.ExecuteReader();
+                
+                if (db.Reader.Read())
+                {
+                    roleDTO.RoleId = db.Reader.GetInt32(0);
+                    roleDTO.RoleName = db.Reader.GetString(1);
+                    roleDTO.RoleDescription = db.Reader.GetString(2);
+                    roleDTO.IsActive = db.Reader.GetBoolean(3);
+                }
+
+                Initialize(roleDTO);
+
+                return roleDTO;
+            } 
+            catch (Exception ex)
+            {
+                throw new Exception("Error at getById method", ex);
+            } 
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
     }
 }
