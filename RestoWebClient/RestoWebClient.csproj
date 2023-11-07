@@ -183,7 +183,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="Resto.Master" />
     <None Include="Properties\Settings.settings">
