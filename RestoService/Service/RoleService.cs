@@ -61,7 +61,7 @@ namespace RestoService.Service
                     });
                 }
 
-                if (roleList.Count == 0) throw new Exception("No roles found");   
+                if (roleList.Count == 0) throw new Exception("Role list empty");   
 
                 return ServiceResponse<List<RoleDTO>>.Success(roleList);
 
