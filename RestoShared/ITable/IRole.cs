@@ -15,7 +15,7 @@ namespace RestoShared.ITable
         bool IsActive { get; }
 
         void Initialize(RoleDTO roleDTO);
-        List<RoleDTO> GetAll();
-        RoleDTO GetById(int roleId);
+        ServiceResponse<List<RoleDTO>> GetAll();
+        ServiceResponse<RoleDTO> GetById(int roleId);
     }
 }
