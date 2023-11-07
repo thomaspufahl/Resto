@@ -1,4 +1,5 @@
 ﻿using RestoService.Database;
+using RestoShared;
 using RestoShared.DTO;
 using RestoShared.ITable;
 using System;
@@ -40,7 +41,7 @@ namespace RestoService.Service
 
             _IsInitialized = true;
         }
-        public List<RoleDTO> GetAll()
+        public ServiceResponse<List<RoleDTO>> GetAll()
         {
             List<RoleDTO> roleList = new List<RoleDTO>();
 
@@ -60,12 +61,15 @@ namespace RestoService.Service
                     });
                 }
 
-                return roleList;
+                if (roleList.Count == 0) throw new Exception("No roles found");   
+
+                return ServiceResponse<List<RoleDTO>>.Success(roleList);
 
             } catch (Exception ex)
             {
-                throw new Exception("Error at getAll method", ex);
-            } finally
+                return ServiceResponse<List<RoleDTO>>.Fail(ex.Message);
+            } 
+            finally
             {
                 db.CloseConnection();
             }
@@ -80,7 +84,7 @@ namespace RestoService.Service
         /// A RoleDTO obtained from the database.
         /// </returns>
         /// <exception cref="Exception"></exception>
-        public RoleDTO GetById(int roleId)
+        public ServiceResponse<RoleDTO> GetById(int roleId)
         {
             RoleDTO roleDTO = new RoleDTO();
 
@@ -90,21 +94,20 @@ namespace RestoService.Service
                 db.SetParam("@roleId", roleId);
                 db.ExecuteReader();
                 
-                if (db.Reader.Read())
-                {
-                    roleDTO.RoleId = db.Reader.GetInt32(0);
-                    roleDTO.RoleName = db.Reader.GetString(1);
-                    roleDTO.RoleDescription = db.Reader.GetString(2);
-                    roleDTO.IsActive = db.Reader.GetBoolean(3);
-                }
+                if (!db.Reader.Read()) throw new Exception("Role not found");
+
+                
+                roleDTO.RoleId = db.Reader.GetInt32(0);
+                roleDTO.RoleName = db.Reader.GetString(1);
+                roleDTO.RoleDescription = db.Reader.GetString(2);
+                roleDTO.IsActive = db.Reader.GetBoolean(3);
 
                 Initialize(roleDTO);
-
-                return roleDTO;
+                return ServiceResponse<RoleDTO>.Success(roleDTO);
             } 
             catch (Exception ex)
             {
-                throw new Exception("Error at getById method", ex);
+                return ServiceResponse<RoleDTO>.Fail(ex.Message);
             } 
             finally
             {
