@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RestoWebClient
+namespace RestoWebClient.Pages
 {
 
 
-    public partial class viewEmpleados
+    public partial class Employees
     {
     }
 }

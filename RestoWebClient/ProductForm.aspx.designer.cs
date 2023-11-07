@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RestoWebClient
+namespace RestoWebClient.Pages.Product
 {
 
 
-    public partial class viewReportes
+    public partial class ProductForm
     {
     }
 }

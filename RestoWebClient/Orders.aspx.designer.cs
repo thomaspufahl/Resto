@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RestoWebClient
+namespace RestoWebClient.Pages.Order
 {
 
 
-    public partial class EmpleadosForm
+    public partial class Orders
     {
     }
 }
