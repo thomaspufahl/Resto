@@ -37,6 +37,8 @@ namespace RestoService.Service
             RoleName = roleDTO.RoleName;
             RoleDescription = roleDTO.RoleDescription;
             IsActive = roleDTO.IsActive;
+
+            _IsInitialized = true;
         }
         public List<RoleDTO> GetAll()
         {
