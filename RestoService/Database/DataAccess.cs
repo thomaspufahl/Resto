@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace RestoService.Database
 {
     internal class DataAccess
     {
-        private readonly string _ConnectionString = "server=localhost, 1433; database=Resto; user=sa; password=Resto123";
+        private readonly string _ConnectionString = Properties.Settings.Default.Conex;
         private SqlConnection _Conex;
         private SqlCommand _Cmd;
 
