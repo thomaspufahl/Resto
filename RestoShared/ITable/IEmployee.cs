@@ -22,8 +22,8 @@ namespace RestoShared.ITable
         int Add();
         List<EmployeeDTO> GetAll();
         EmployeeDTO GetById();
-        void Update();
-        void Delete();
+        int Update();
+        int Delete();
         int Activate();
         int Deactivate();
     }
