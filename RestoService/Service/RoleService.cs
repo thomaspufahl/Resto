@@ -45,15 +45,15 @@ namespace RestoService.Service
             try
             {
                 db.SetProc("getRole");
-                db.Execute();
+                db.ExecuteReader();
 
                 while(db.Reader.Read())
                 {
                     roleList.Add(new RoleDTO
                     {
                         RoleId = db.Reader.GetInt32(0),
-                        Name = db.Reader.GetString(1),
-                        Description = db.Reader.GetString(2),
+                        RoleName = db.Reader.GetString(1),
+                        RoleDescription = db.Reader.GetString(2),
                         IsActive = db.Reader.GetBoolean(3)
                     });
                 }
