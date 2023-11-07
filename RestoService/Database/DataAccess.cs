@@ -93,5 +93,28 @@ namespace RestoService.Database
                 throw new Exception("Error ocurring at database conex", ex);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>
+        /// The first column of the first row in the result set, or a null reference if the result set is empty.
+        /// </returns>
+        /// <exception cref="Exception"></exception>
+        public object ExecuteScalar()
+        {
+            _Cmd.Connection = _Conex;
+
+            try
+            {
+                _Conex.Open();
+                return _Cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                CloseConnection();
+                throw new Exception("Error ocurring at database conex", ex);
+            }
+        }
     }
 }
