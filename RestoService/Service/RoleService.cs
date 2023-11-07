@@ -102,7 +102,6 @@ namespace RestoService.Service
                 roleDTO.RoleDescription = db.Reader.GetString(2);
                 roleDTO.IsActive = db.Reader.GetBoolean(3);
 
-                Initialize(roleDTO);
                 return ServiceResponse<RoleDTO>.Success(roleDTO);
             } 
             catch (Exception ex)
