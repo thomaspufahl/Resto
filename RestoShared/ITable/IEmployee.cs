@@ -12,26 +12,19 @@ namespace RestoShared.ITable
     public interface IEmployee
     {
         int EmployeeId { get; }
-
         string EmployeeNumber { get; }
         string FirstName { get; }
         string LastName { get; }
         int RoleId { get; }
-
         bool IsActive { get; }
 
         void Initialize(EmployeeDTO employeeDTO);
-
         int Add();
         List<EmployeeDTO> GetAll();
         EmployeeDTO GetById();
-
         void Update();
-
-        int Activate();
-
-        int Deactivate();
-        
         void Delete();
+        int Activate();
+        int Deactivate();
     }
 }
