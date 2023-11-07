@@ -36,20 +36,9 @@ namespace RestoService.Database
             _Cmd.CommandText = procName;
         }
 
-        public void Execute()
+        public void SetParam(string paramName, object value)
         {
-            ExecuteReader();
-        }
-        public void Execute(bool isNonQuery)
-        {
-            if (isNonQuery)
-            {
-                ExecuteNonQuery();
-            }
-            else
-            {
-                ExecuteReader();
-            }
+            _Cmd.Parameters.AddWithValue(paramName, value);
         }
 
         public void CloseConnection()
@@ -59,7 +48,14 @@ namespace RestoService.Database
             _Conex.Close();
         }
 
-        private void ExecuteReader()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>
+        /// A SqlDataReader object.
+        /// </returns>
+        /// <exception cref="Exception"></exception>
+        public void ExecuteReader()
         {
             _Cmd.Connection = _Conex;
 
@@ -75,14 +71,21 @@ namespace RestoService.Database
             }
         }
 
-        private void ExecuteNonQuery()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>
+        /// The number of rows affected.
+        /// </returns>
+        /// <exception cref="Exception"></exception>
+        public int ExecuteNonQuery()
         {
             _Cmd.Connection = _Conex;
 
             try
             {
                 _Conex.Open();
-                _Cmd.ExecuteNonQuery();
+                return _Cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
