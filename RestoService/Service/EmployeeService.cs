@@ -61,7 +61,7 @@ namespace RestoService.Service
             try
             {
                 db.SetProc("getEmployee");
-                db.Execute();
+                db.ExecuteReader();
 
                 while (db.Reader.Read())
                 {
@@ -77,7 +77,6 @@ namespace RestoService.Service
                 }
 
                 return EmployeeList;
-
             }
             catch (Exception ex)
             {
