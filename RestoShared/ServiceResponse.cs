@@ -11,6 +11,7 @@ namespace RestoShared
         Success,
         Fail
     }
+
     public class ServiceResponse<T>
     {
         public bool IsSuccess 
@@ -23,6 +24,7 @@ namespace RestoShared
         public string Message { get; set; }
         public ServiceResponseStatus Status { get; set; }
         public T Data { get; set; }
+
         public ServiceResponse() { }
         public ServiceResponse(ServiceResponseStatus status, T data)
         {
@@ -50,7 +52,6 @@ namespace RestoShared
         {
             return new ServiceResponse<T>(ServiceResponseStatus.Success, data, message);
         }
-
         public static ServiceResponse<T> Fail(T data)
         {
             return new ServiceResponse<T>(ServiceResponseStatus.Fail, data);
