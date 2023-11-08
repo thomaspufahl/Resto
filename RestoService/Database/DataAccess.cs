@@ -44,7 +44,8 @@ namespace RestoService.Database
         public void CloseConnection()
         {
             if (Reader != null && !Reader.IsClosed) Reader.Close();
-
+            
+            _Cmd.Parameters.Clear();
             _Conex.Close();
         }
 
@@ -67,7 +68,7 @@ namespace RestoService.Database
             catch (Exception ex)
             {
                 CloseConnection();
-                throw new Exception("Error ocurring at database conex", ex);
+                throw ex;
             }
         }
 
@@ -90,7 +91,7 @@ namespace RestoService.Database
             catch (Exception ex)
             {
                 CloseConnection();
-                throw new Exception("Error ocurring at database conex", ex);
+                throw ex;
             }
         }
 
@@ -113,7 +114,7 @@ namespace RestoService.Database
             catch (Exception ex)
             {
                 CloseConnection();
-                throw new Exception("Error ocurring at database conex", ex);
+                throw ex;
             }
         }
     }
