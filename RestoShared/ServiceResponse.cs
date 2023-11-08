@@ -31,12 +31,6 @@ namespace RestoShared
             Status = status;
             Data = data;
         }
-        public ServiceResponse(ServiceResponseStatus status, string message)
-        {
-            Status = status;
-            Data = default;
-            Message = message;
-        }
         public ServiceResponse(ServiceResponseStatus status, T data, string message)
         {
             Status = status;
@@ -58,7 +52,7 @@ namespace RestoShared
         }
         public static ServiceResponse<T> Fail(string message)
         {
-            return new ServiceResponse<T>(ServiceResponseStatus.Fail, message);
+            return new ServiceResponse<T>(ServiceResponseStatus.Fail, default, message);
         }
     }
 }
