@@ -13,6 +13,13 @@ namespace RestoShared
     }
     public class ServiceResponse<T>
     {
+        public bool IsSuccess 
+        {
+            get
+            {
+                return Status == ServiceResponseStatus.Success;
+            }
+        }
         public string Message { get; set; }
         public ServiceResponseStatus Status { get; set; }
         public T Data { get; set; }
