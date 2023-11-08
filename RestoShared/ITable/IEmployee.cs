@@ -19,12 +19,12 @@ namespace RestoShared.ITable
         bool IsActive { get; }
 
         void Initialize(EmployeeDTO employeeDTO);
-        int Add();
-        List<EmployeeDTO> GetAll();
-        EmployeeDTO GetById();
-        int Update();
-        int Delete();
-        int Activate();
-        int Deactivate();
+        ServiceResponse<int> Add();
+        ServiceResponse<List<EmployeeDTO>> GetAll();
+        ServiceResponse<EmployeeDTO> GetById(int employeeId);
+        ServiceResponse<int> Update();
+        ServiceResponse<int> Delete();
+        ServiceResponse<int> Activate();
+        ServiceResponse<int> Deactivate();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using RestoService.Database;
+using RestoShared;
 using RestoShared.DTO;
 using RestoShared.ITable;
 using System;
@@ -53,8 +54,36 @@ namespace RestoService.Service
 
             _IsInitialized = true;
         }
+        public ServiceResponse<int> Add()
+        {
+            try
+            {
+                CheckInitialized();
 
-        public List<EmployeeDTO> GetAll()
+                db.SetProc("insEmployee");
+
+                db.SetParam("@employeeNumber", EmployeeNumber);
+                db.SetParam("@firstName", FirstName);
+                db.SetParam("@lastName", LastName);
+                db.SetParam("@roleId", RoleId);
+
+                int identity = Convert.ToInt32(db.ExecuteScalar());
+                
+                Console.WriteLine(identity);
+                if (identity <= 0) return ServiceResponse<int>.Fail("Employee not added");
+
+                return ServiceResponse<int>.Success(identity);
+            }
+            catch (Exception ex)
+            {
+                return ServiceResponse<int>.Fail(ex.Message);
+            } 
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+        public ServiceResponse<List<EmployeeDTO>> GetAll()
         {
             List<EmployeeDTO> EmployeeList = new List<EmployeeDTO>();
 
@@ -75,49 +104,154 @@ namespace RestoService.Service
                         IsActive = db.Reader.GetBoolean(5)
                     });
                 }
+                
+                if (EmployeeList.Count == 0) return ServiceResponse<List<EmployeeDTO>>.Fail("Employee list empty");
 
-                return EmployeeList;
+                return ServiceResponse<List<EmployeeDTO>>.Success(EmployeeList);
             }
             catch (Exception ex)
             {
-                throw new Exception("Error at getAll method", ex);
-            } finally
+                return ServiceResponse<List<EmployeeDTO>>.Fail(ex.Message);
+            } 
+            finally
             {
                 db.CloseConnection();
             }
         }
-
-
-        public int Activate()
+        public ServiceResponse<EmployeeDTO> GetById(int employeeId)
         {
-            throw new NotImplementedException();
+            EmployeeDTO employeeDTO = new EmployeeDTO();
+
+            try
+            {
+                db.SetProc("getEmployeeById");
+                db.SetParam("@employeeId", employeeId);
+                db.ExecuteReader();
+
+                if (!db.Reader.Read()) return ServiceResponse<EmployeeDTO>.Fail("Employee not found");
+
+                employeeDTO.EmployeeId = db.Reader.GetInt32(0);
+                employeeDTO.EmployeeNumber = db.Reader.GetString(1);
+                employeeDTO.FirstName = db.Reader.GetString(2);
+                employeeDTO.LastName = db.Reader.GetString(3);
+                employeeDTO.RoleId = db.Reader.GetInt32(4);
+                employeeDTO.IsActive = db.Reader.GetBoolean(5);
+
+                return ServiceResponse<EmployeeDTO>.Success(employeeDTO);
+            }
+            catch (Exception ex)
+            {               
+                return ServiceResponse<EmployeeDTO>.Fail(ex.Message);
+            } 
+            finally
+            {
+                db.CloseConnection();
+            }
+
         }
-
-        public int Add()
+        public ServiceResponse<int> Update()
         {
-            CheckInitialized();
-            throw new NotImplementedException();
+            try
+            {
+                CheckInitialized();
+
+                db.SetProc("updEmployee");
+
+                db.SetParam("@employeeId", EmployeeId);
+                db.SetParam("@firstName", FirstName);
+                db.SetParam("@lastName", LastName);
+                db.SetParam("@roleId", RoleId);
+
+                int rowsAffected = db.ExecuteNonQuery();
+
+                if (rowsAffected == 0) return ServiceResponse<int>.Fail("Employee not found");
+
+                return ServiceResponse<int>.Success(rowsAffected);
+            }
+            catch (Exception ex)
+            {
+                return ServiceResponse<int>.Fail(ex.Message);   
+            } 
+            finally
+            {
+                db.CloseConnection();
+            }   
         }
-
-        public void Delete()
+        public ServiceResponse<int> Delete()
         {
-            throw new NotImplementedException();
+            try
+            {
+                CheckInitialized();
+
+                db.SetProc("delEmployee");
+
+                db.SetParam("@employeeId", EmployeeId);
+
+                int rowsAffected = db.ExecuteNonQuery();
+
+                if (rowsAffected == 0) return ServiceResponse<int>.Fail("Employee not found");
+
+                return ServiceResponse<int>.Success(rowsAffected);
+            }
+            catch (Exception ex)
+            {
+                return ServiceResponse<int>.Fail(ex.Message);
+            } 
+            finally
+            {
+                db.CloseConnection();
+            }
+            
         }
-
-        public int Deactivate()
+        public ServiceResponse<int> Activate()
         {
-            throw new NotImplementedException();
+            try
+            {
+                CheckInitialized();
+
+                db.SetProc("activateEmployee");
+
+                db.SetParam("@employeeId", EmployeeId);
+
+                int rowsAffected = db.ExecuteNonQuery();
+
+                if (rowsAffected == 0) return ServiceResponse<int>.Fail("Employee not found");
+
+                return ServiceResponse<int>.Success(rowsAffected);
+            }
+            catch (Exception ex)
+            {
+                return ServiceResponse<int>.Fail(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
-
-        public EmployeeDTO GetById()
+        public ServiceResponse<int> Deactivate()
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                CheckInitialized();
 
+                db.SetProc("deactivateEmployee");
 
-        public void Update()
-        {
-            throw new NotImplementedException();
+                db.SetParam("@employeeId", EmployeeId);
+
+                int rowsAffected = db.ExecuteNonQuery();
+
+                if (rowsAffected == 0) return ServiceResponse<int>.Fail("Employee not found");
+
+                return ServiceResponse<int>.Success(rowsAffected);
+            }
+            catch (Exception ex)
+            {
+                return ServiceResponse<int>.Fail(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
     }
 }
