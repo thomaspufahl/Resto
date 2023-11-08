@@ -52,6 +52,7 @@
     <Compile Include="RestoManager.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\ProductCategoryService.cs" />
+    <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\RoleService.cs" />
   </ItemGroup>
   <ItemGroup>
