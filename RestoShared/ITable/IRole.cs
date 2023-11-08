@@ -9,12 +9,6 @@ namespace RestoShared.ITable
 {
     public interface IRole
     {
-        int RoleId { get; }
-        string RoleName { get; }
-        string RoleDescription { get; }
-        bool IsActive { get; }
-
-        void Initialize(RoleDTO roleDTO);
         ServiceResponse<List<RoleDTO>> GetAll();
         ServiceResponse<RoleDTO> GetById(int roleId);
     }

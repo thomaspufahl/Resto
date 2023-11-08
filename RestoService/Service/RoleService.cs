@@ -13,7 +13,6 @@ namespace RestoService.Service
     internal class RoleService : IRole
     {
         private readonly DataAccess db;
-        private bool _IsInitialized = false;
 
         public int RoleId { get; private set; }
         public string RoleName { get; private set; }
@@ -25,22 +24,6 @@ namespace RestoService.Service
             db = new DataAccess();
         }
 
-        private void CheckInitialized()
-        {
-            if (!_IsInitialized)
-            {
-                throw new InvalidOperationException("Role is not initialize");
-            }
-        }
-        public void Initialize(RoleDTO roleDTO)
-        {
-            RoleId = roleDTO.RoleId;
-            RoleName = roleDTO.RoleName;
-            RoleDescription = roleDTO.RoleDescription;
-            IsActive = roleDTO.IsActive;
-
-            _IsInitialized = true;
-        }
         public ServiceResponse<List<RoleDTO>> GetAll()
         {
             List<RoleDTO> roleList = new List<RoleDTO>();
@@ -48,6 +31,7 @@ namespace RestoService.Service
             try
             {
                 db.SetProc("getRole");
+
                 db.ExecuteReader();
 
                 while(db.Reader.Read())
@@ -77,7 +61,6 @@ namespace RestoService.Service
 
         /// <summary>
         /// Returns a RoleDTO object obtained from the database.
-        /// Initializes the Role fields with the values obtained from the database.
         /// </summary>
         /// <param name="roleId"></param>
         /// <returns>
@@ -86,8 +69,6 @@ namespace RestoService.Service
         /// <exception cref="Exception"></exception>
         public ServiceResponse<RoleDTO> GetById(int roleId)
         {
-            RoleDTO roleDTO = new RoleDTO();
-
             try
             {
                 db.SetProc("getRoleById");
@@ -96,13 +77,16 @@ namespace RestoService.Service
                 
                 if (!db.Reader.Read()) throw new Exception("Role not found");
 
-                
-                roleDTO.RoleId = db.Reader.GetInt32(0);
-                roleDTO.RoleName = db.Reader.GetString(1);
-                roleDTO.RoleDescription = db.Reader.GetString(2);
-                roleDTO.IsActive = db.Reader.GetBoolean(3);
-
-                return ServiceResponse<RoleDTO>.Success(roleDTO);
+                return ServiceResponse<RoleDTO>.Success
+                (
+                    new RoleDTO
+                    {
+                        RoleId = db.Reader.GetInt32(0),
+                        RoleName = db.Reader.GetString(1),
+                        RoleDescription = db.Reader.GetString(2),
+                        IsActive = db.Reader.GetBoolean(3)
+                    }
+                );
             } 
             catch (Exception ex)
             {
