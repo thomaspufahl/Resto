@@ -11,8 +11,6 @@ using System.Threading.Tasks;
 
 namespace RestoService.Service
 {
-    
-
     internal class EmployeeService : IEmployee
     {
         private readonly DataAccess db;
@@ -23,7 +21,6 @@ namespace RestoService.Service
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public int RoleId { get; private set; }
-
         public bool IsActive { get; private set; }
 
         public EmployeeService()
@@ -38,18 +35,14 @@ namespace RestoService.Service
                 throw new InvalidOperationException("Employee is not initialize");
             }
         }
+
         public void Initialize(EmployeeDTO employeeDTO)
         {
             EmployeeId = employeeDTO.EmployeeId;
-
             EmployeeNumber = employeeDTO.EmployeeNumber;
-
             FirstName = employeeDTO.FirstName;
-
             LastName = employeeDTO.LastName;
-
             RoleId = employeeDTO.RoleId;
-
             IsActive = employeeDTO.IsActive;
 
             _IsInitialized = true;
@@ -69,7 +62,6 @@ namespace RestoService.Service
 
                 int identity = Convert.ToInt32(db.ExecuteScalar());
                 
-                Console.WriteLine(identity);
                 if (identity <= 0) return ServiceResponse<int>.Fail("Employee not added");
 
                 return ServiceResponse<int>.Success(identity);
@@ -90,6 +82,7 @@ namespace RestoService.Service
             try
             {
                 db.SetProc("getEmployee");
+
                 db.ExecuteReader();
 
                 while (db.Reader.Read())
@@ -120,24 +113,28 @@ namespace RestoService.Service
         }
         public ServiceResponse<EmployeeDTO> GetById(int employeeId)
         {
-            EmployeeDTO employeeDTO = new EmployeeDTO();
-
             try
             {
                 db.SetProc("getEmployeeById");
+
                 db.SetParam("@employeeId", employeeId);
+
                 db.ExecuteReader();
 
                 if (!db.Reader.Read()) return ServiceResponse<EmployeeDTO>.Fail("Employee not found");
 
-                employeeDTO.EmployeeId = db.Reader.GetInt32(0);
-                employeeDTO.EmployeeNumber = db.Reader.GetString(1);
-                employeeDTO.FirstName = db.Reader.GetString(2);
-                employeeDTO.LastName = db.Reader.GetString(3);
-                employeeDTO.RoleId = db.Reader.GetInt32(4);
-                employeeDTO.IsActive = db.Reader.GetBoolean(5);
-
-                return ServiceResponse<EmployeeDTO>.Success(employeeDTO);
+                return ServiceResponse<EmployeeDTO>.Success
+                (
+                    new EmployeeDTO
+                    {
+                        EmployeeId = db.Reader.GetInt32(0),
+                        EmployeeNumber = db.Reader.GetString(1),
+                        FirstName = db.Reader.GetString(2),
+                        LastName = db.Reader.GetString(3),
+                        RoleId = db.Reader.GetInt32(4),
+                        IsActive = db.Reader.GetBoolean(5)
+                    }
+                );
             }
             catch (Exception ex)
             {               
@@ -216,6 +213,7 @@ namespace RestoService.Service
                 int rowsAffected = db.ExecuteNonQuery();
 
                 if (rowsAffected == 0) return ServiceResponse<int>.Fail("Employee not found");
+                if (rowsAffected == -1) return ServiceResponse<int>.Fail("Employee is already active");
 
                 return ServiceResponse<int>.Success(rowsAffected);
             }
@@ -241,6 +239,7 @@ namespace RestoService.Service
                 int rowsAffected = db.ExecuteNonQuery();
 
                 if (rowsAffected == 0) return ServiceResponse<int>.Fail("Employee not found");
+                if (rowsAffected == -1) return ServiceResponse<int>.Fail("Employee is already inactive");
 
                 return ServiceResponse<int>.Success(rowsAffected);
             }
