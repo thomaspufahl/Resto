@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\ProductCategoryDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="IRestoDataManager.cs" />
     <Compile Include="ITable\IEmployee.cs" />
