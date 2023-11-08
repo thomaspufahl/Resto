@@ -13,14 +13,17 @@ namespace RestoService
     {
         private RoleService _RoleService;
         private EmployeeService _EmployeeService;
+        private ProductCategoryService _ProductCategoryService;
 
         public IRole Role { get { return _RoleService; } }
         public IEmployee Employee { get { return _EmployeeService; } }
+        public IProductCategory ProductCategory { get { return _ProductCategoryService; } }        
 
         public RestoDataManager()
         {
             _RoleService = new RoleService();
             _EmployeeService = new EmployeeService();
+            _ProductCategoryService = new ProductCategoryService();
         }
     }
 }
