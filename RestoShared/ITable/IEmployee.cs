@@ -22,6 +22,7 @@ namespace RestoShared.ITable
         ServiceResponse<int> Add();
         ServiceResponse<List<EmployeeDTO>> GetAll();
         ServiceResponse<EmployeeDTO> GetById(int employeeId);
+        ServiceResponse<EmployeeDTO> GeyByEmployeeNumber(string employeeNumber);
         ServiceResponse<int> Update();
         ServiceResponse<int> Delete();
         ServiceResponse<int> Activate();
