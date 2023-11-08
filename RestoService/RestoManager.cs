@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RestoWebClient.InstanceManager
+namespace RestoService
 {
     public class RestoManager
     {
