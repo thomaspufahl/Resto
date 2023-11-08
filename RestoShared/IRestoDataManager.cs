@@ -12,5 +12,6 @@ namespace RestoShared
         IRole Role { get; }
         IEmployee Employee { get; }
         IProductCategory ProductCategory { get; }
+        IProduct Product { get; }
     }
 }
