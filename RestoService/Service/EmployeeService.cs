@@ -144,7 +144,40 @@ namespace RestoService.Service
             {
                 db.CloseConnection();
             }
+        }
+        public ServiceResponse<EmployeeDTO> GeyByEmployeeNumber(string employeeNumber)
+        {
+            try
+            {
+                db.SetProc("getEmployeeByEmployeeNumber");
 
+                db.SetParam("@employeeNumber", employeeNumber);
+
+                db.ExecuteReader();
+
+                if (!db.Reader.Read()) return ServiceResponse<EmployeeDTO>.Fail("Employee not found");
+
+                return ServiceResponse<EmployeeDTO>.Success
+                (
+                    new EmployeeDTO
+                    {
+                        EmployeeId = db.Reader.GetInt32(0),
+                        EmployeeNumber = db.Reader.GetString(1),
+                        FirstName = db.Reader.GetString(2),
+                        LastName = db.Reader.GetString(3),
+                        RoleId = db.Reader.GetInt32(4),
+                        IsActive = db.Reader.GetBoolean(5)
+                    }
+                );
+            }
+            catch (Exception ex)
+            {
+                return ServiceResponse<EmployeeDTO>.Fail(ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
         public ServiceResponse<int> Update()
         {
@@ -197,8 +230,7 @@ namespace RestoService.Service
             finally
             {
                 db.CloseConnection();
-            }
-            
+            }            
         }
         public ServiceResponse<int> Activate()
         {
