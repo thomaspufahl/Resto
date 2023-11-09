@@ -10,20 +10,19 @@ namespace RestoWebClient
     public partial class Resto : System.Web.UI.MasterPage
     {
         private readonly Router Router = new Router();
-        SessionManager sessionManager;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                sessionManager = new SessionManager(Page);
-
-                if (!sessionManager.IsSessionActive)
-                {
-                    sessionManager.Login("E66666666");
-                }
-            }
+            System.Diagnostics.Debug.WriteLine($"Resto.Master.cs: Page_Load: IsLogged: {SessionManager.IsLogged}");
+            string name = SessionManager.IsLogged ? SessionManager.LoggedUser.FirstName : "No hay nadie logeado";
+            System.Diagnostics.Debug.WriteLine($"Resto.Master.cs: Page_Load: LoggedUser: {name}");
+            System.Diagnostics.Debug.WriteLine($"Resto.Master.cs: Page_Load: AccessLevel: {SessionManager.LoggedAccessLevel}");
 
             Router.AuthorizeNavigation(HttpContext.Current.Request.Url.AbsolutePath.Substring(1));
+        }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            SessionManager.Logout();
         }
     }
 }
