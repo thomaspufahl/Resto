@@ -38,7 +38,7 @@
                     <asp:Button Text="Logout" runat="server" OnClick="Unnamed_Click" CssClass="px-5"/>
                 </div>
             </nav>
-            <div>
+            <div class="px-4">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
