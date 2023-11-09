@@ -50,7 +50,7 @@ namespace RestoWebClient
 
         public static readonly Dictionary<RouteName, string> RouteUrl = new Dictionary<RouteName, string>()
         {
-            { RouteName.HOME, "/" },
+            { RouteName.HOME, "default.aspx" },
             { RouteName.DEFAULT, "Default.aspx"},
             { RouteName.LOGIN, "LoginForm.aspx"},
             { RouteName.NOT_FOUND, "404.aspx"},
