@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RestoWebClient.Pages
+namespace RestoWebClient
 {
     public partial class _404 : System.Web.UI.Page
     {

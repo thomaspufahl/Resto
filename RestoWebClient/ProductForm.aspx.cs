@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RestoWebClient.Pages.Product
+namespace RestoWebClient
 {
     public partial class ProductForm : System.Web.UI.Page
     {

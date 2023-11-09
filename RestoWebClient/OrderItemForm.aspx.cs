@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RestoWebClient.Pages.Order
+namespace RestoWebClient
 {
     public partial class OrderItemForm : System.Web.UI.Page
     {

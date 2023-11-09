@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RestoWebClient.Pages
+namespace RestoWebClient
 {
     public partial class EmployeeForm : System.Web.UI.Page
     {
