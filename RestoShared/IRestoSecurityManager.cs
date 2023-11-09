@@ -18,9 +18,11 @@ namespace RestoShared
         EmployeeDTO LoggedUser { get; }
         bool IsLogged { get; }
         bool IsLoggedAsManager { get; }
+        AccessLevel LoggedAccessLevel { get; }
 
         ServiceResponse<bool> Login(string employeeNumber);
-        ServiceResponse<bool> Logout();
-        bool IsAuthorized(AccessLevel accessLevel);
+        //ServiceResponse<bool> Logout();
+        bool IsAuth(AccessLevel accessLevelToValidate);
+        bool IsAuth(AccessLevel loggedAccessLevel, AccessLevel accessLevelToValidate);
     }
 }

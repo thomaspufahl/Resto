@@ -13,7 +13,7 @@ namespace RestoService
     internal class RestoSecurityManager : IRestoSecurityManager
     {
         private readonly DataAccess db;
-        private AccessLevel _LoggedAccessLevel { get; set; }
+        public AccessLevel LoggedAccessLevel { get; set; }
 
         public EmployeeDTO LoggedUser { get; private set; }
         public bool IsLogged
@@ -28,7 +28,7 @@ namespace RestoService
         public RestoSecurityManager()
         {
             db = new DataAccess();
-            _LoggedAccessLevel = AccessLevel.MANAGER;
+            LoggedAccessLevel = AccessLevel.NOT_LOGGED;
         }
 
         private void CheckLogged()
@@ -62,13 +62,13 @@ namespace RestoService
             if (!Response.IsSuccess) return ServiceResponse<bool>.Fail(Response.Message);
 
             LoggedUser = Response.Data;
-            _LoggedAccessLevel = AccessLevel.LOGGED;
+            LoggedAccessLevel = AccessLevel.LOGGED;
 
             var IsManagerResponse = IsManager();
             if (!IsManagerResponse.IsSuccess) return ServiceResponse<bool>.Fail(IsManagerResponse.Message);
             IsLoggedAsManager = IsManager().Data;
 
-            if (IsLoggedAsManager) _LoggedAccessLevel = AccessLevel.MANAGER;
+            if (IsLoggedAsManager) LoggedAccessLevel = AccessLevel.MANAGER;
 
             return ServiceResponse<bool>.Success(true, "Login successful. Welcome!");
         }
@@ -79,7 +79,7 @@ namespace RestoService
                 CheckLogged();
                 LoggedUser = null;
                 IsLoggedAsManager = false;
-                _LoggedAccessLevel = AccessLevel.NOT_LOGGED;
+                LoggedAccessLevel = AccessLevel.NOT_LOGGED;
 
                 return ServiceResponse<bool>.Success(true, "Logged out successfully.");
             }
@@ -88,13 +88,17 @@ namespace RestoService
                 return ServiceResponse<bool>.Fail(ex.Message);
             }
         }
-        public bool IsAuthorized(AccessLevel accessLevel)
+        public bool IsAuth(AccessLevel accessLevelToValidate)
         {
             /*
-            Debug.WriteLine($"IsAuthorized: {accessLevel} > {_LoggedAccessLevel}");
-            Debug.WriteLine(accessLevel > _LoggedAccessLevel);
+            Debug.WriteLine($"IsAuthorized: {accessLevelToValidate} > {LoggedAccessLevel}");
+            Debug.WriteLine(accessLevelToValidate > LoggedAccessLevel);
             */
-            return accessLevel > _LoggedAccessLevel;
+            return accessLevelToValidate > LoggedAccessLevel;
+        }
+        public bool IsAuth(AccessLevel loggedAccessLevel, AccessLevel accessLevelToValidate)
+        {
+            return accessLevelToValidate > loggedAccessLevel;
         }
     }
 }
