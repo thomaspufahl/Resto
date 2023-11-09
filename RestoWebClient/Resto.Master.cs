@@ -9,9 +9,11 @@ namespace RestoWebClient
 {
     public partial class Resto : System.Web.UI.MasterPage
     {
+        private readonly Router Router = new Router();
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            Router.AuthorizeNavigation(HttpContext.Current.Request.Url.AbsolutePath.Substring(1));
         }
     }
 }
