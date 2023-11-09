@@ -71,8 +71,7 @@ namespace RestoWebClient
             {
                 if (route.Value == path)
                 {
-                    // check if user is authorized to access this route
-                    if (RestoManager.Security.IsAuthorized(RouteAuth[route.Key]))
+                    if (RestoManager.Security.IsAuth(SessionManager.LoggedAccessLevel, RouteAuth[route.Key]))
                     {
                         RedirectTo(RouteName.LOGIN);
                     }
