@@ -11,7 +11,7 @@ namespace RestoWebClient
 {
     public enum RouteName
         {
-            HOME,
+            ROOT,
             DEFAULT,
             LOGIN,
             NOT_FOUND,
@@ -34,7 +34,7 @@ namespace RestoWebClient
     {
         private readonly Dictionary<RouteName, AccessLevel> RouteAuth = new Dictionary<RouteName, AccessLevel>()
         {
-            { RouteName.HOME, AccessLevel.LOGGED },
+            { RouteName.ROOT, AccessLevel.LOGGED },
             { RouteName.DEFAULT, AccessLevel.LOGGED },
             { RouteName.LOGIN, AccessLevel.NOT_LOGGED },
             { RouteName.NOT_FOUND, AccessLevel.NOT_LOGGED },
@@ -50,7 +50,7 @@ namespace RestoWebClient
 
         public static readonly Dictionary<RouteName, string> RouteUrl = new Dictionary<RouteName, string>()
         {
-            { RouteName.HOME, "default.aspx" },
+            { RouteName.ROOT, "default.aspx" },
             { RouteName.DEFAULT, "Default.aspx"},
             { RouteName.LOGIN, "LoginForm.aspx"},
             { RouteName.NOT_FOUND, "404.aspx"},
