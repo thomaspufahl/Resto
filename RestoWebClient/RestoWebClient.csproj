@@ -181,6 +181,7 @@
       <DependentUpon>Resto.Master</DependentUpon>
     </Compile>
     <Compile Include="Router.cs" />
+    <Compile Include="SessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
