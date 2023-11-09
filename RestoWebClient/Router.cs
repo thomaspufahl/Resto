@@ -34,8 +34,8 @@ namespace RestoWebClient
     {
         private readonly Dictionary<RouteName, AccessLevel> RouteAuth = new Dictionary<RouteName, AccessLevel>()
         {
-            { RouteName.HOME, AccessLevel.NOT_LOGGED },
-            { RouteName.DEFAULT, AccessLevel.NOT_LOGGED },
+            { RouteName.HOME, AccessLevel.LOGGED },
+            { RouteName.DEFAULT, AccessLevel.LOGGED },
             { RouteName.LOGIN, AccessLevel.NOT_LOGGED },
             { RouteName.NOT_FOUND, AccessLevel.NOT_LOGGED },
             { RouteName.REGISTER, AccessLevel.MANAGER },
