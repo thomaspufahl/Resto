@@ -9,16 +9,28 @@ namespace RestoService
 {
     public class RestoManager
     {
-        private static IRestoDataManager _Instance;
+        private static IRestoDataManager _DataInstance;
+        private static IRestoSecurityManager _SecurityInstance;
         public static IRestoDataManager Data
         {
             get
             {
-                if (_Instance == null)
+                if (_DataInstance == null)
                 {
-                    _Instance = new RestoDataManager();
+                    _DataInstance = new RestoDataManager();
                 }
-                return _Instance;
+                return _DataInstance;
+            }
+        }
+        public static IRestoSecurityManager Security
+        {
+            get
+            {
+                if (_SecurityInstance == null)
+                {
+                    _SecurityInstance = new RestoSecurityManager();
+                }
+                return _SecurityInstance;
             }
         }
     }

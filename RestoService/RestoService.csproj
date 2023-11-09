@@ -50,6 +50,7 @@
     <Compile Include="Database\DataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestoManager.cs" />
+    <Compile Include="RestoSecurityManager.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\ProductCategoryService.cs" />
     <Compile Include="Service\ProductService.cs" />
