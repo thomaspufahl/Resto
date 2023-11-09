@@ -182,7 +182,7 @@
     <Compile Include="Resto.Master.designer.cs">
       <DependentUpon>Resto.Master</DependentUpon>
     </Compile>
-    <Compile Include="Converter\RoleIdToRoleNameConverter.cs" />
+    <Compile Include="Converter\RoleConverter.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="SessionManager.cs" />
   </ItemGroup>

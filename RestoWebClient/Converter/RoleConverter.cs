@@ -6,7 +6,7 @@ using System.Web;
 
 namespace RestoWebClient
 {
-    public class RoleIdToRoleNameConverter 
+    public class RoleConverter 
     {
         public static string Convert(int roleId)
         {

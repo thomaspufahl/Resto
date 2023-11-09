@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                        <p runat="server" id="pRoleId" class="text-sm leading-6 text-gray-900"><%# RestoWebClient.RoleIdToRoleNameConverter.Convert((int)(Eval("RoleId"))).ToUpperInvariant() %></p>
+                        <p runat="server" id="pRoleId" class="text-sm leading-6 text-gray-900"><%# RestoWebClient.RoleConverter.Convert((int)(Eval("RoleId"))).ToUpperInvariant() %></p>
                     </div>
                 </li>
             </ItemTemplate>
