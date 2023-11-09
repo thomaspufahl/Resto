@@ -20,7 +20,7 @@ namespace RestoWebClient
             Router.AuthorizeNavigation(HttpContext.Current.Request.Url.AbsolutePath.Substring(1));
         }
 
-        protected void Unnamed_Click(object sender, EventArgs e)
+        protected void btnLogout_Click(object sender, EventArgs e)
         {
             SessionManager.Logout();
         }

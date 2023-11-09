@@ -35,7 +35,7 @@
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                     <a href="LoginForm.aspx" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
-                    <asp:Button Text="Logout" runat="server" OnClick="Unnamed_Click" CssClass="px-5"/>
+                    <asp:Button Text="Logout" ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="px-5"/>
                 </div>
             </nav>
             <div class="px-4">
