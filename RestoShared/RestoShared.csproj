@@ -46,6 +46,7 @@
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="IRestoDataManager.cs" />
+    <Compile Include="IRestoSecurityManager.cs" />
     <Compile Include="ITable\IEmployee.cs" />
     <Compile Include="ITable\IProduct.cs" />
     <Compile Include="ITable\IProductCategory.cs" />
