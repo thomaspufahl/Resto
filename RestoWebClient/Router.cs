@@ -48,7 +48,7 @@ namespace RestoWebClient
             { RouteName.REPORTS, AccessLevel.MANAGER },
         };
 
-        public readonly Dictionary<RouteName, string> RouteUrl = new Dictionary<RouteName, string>()
+        public static readonly Dictionary<RouteName, string> RouteUrl = new Dictionary<RouteName, string>()
         {
             { RouteName.HOME, "/" },
             { RouteName.DEFAULT, "Default.aspx"},
