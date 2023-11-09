@@ -180,6 +180,7 @@
     <Compile Include="Resto.Master.designer.cs">
       <DependentUpon>Resto.Master</DependentUpon>
     </Compile>
+    <Compile Include="Router.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
