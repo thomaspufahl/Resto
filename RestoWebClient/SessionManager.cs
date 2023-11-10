@@ -57,7 +57,7 @@ namespace RestoWebClient
 
             if (!loginResponse.IsSuccess) return false;
 
-            Session["LoggedUser"] = RestoManager.Security.LoggedUser;
+            Session["LoggedUser"] = RestoManager.Security.LoggedUser;;
             Session["IsLoggedAsManager"] = RestoManager.Security.IsLoggedAsManager;
             Session["IsLogged"] = RestoManager.Security.IsLogged;
             Session["LoggedAccessLevel"] = RestoManager.Security.LoggedAccessLevel;
