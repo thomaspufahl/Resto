@@ -3,27 +3,41 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Products</h1>
-    <a href="ProductForm.aspx">product form</a>
-    <ul role="list" class="divide-y divide-gray-100">
-        <asp:Repeater runat="server" ID="ProductList">
-            <ItemTemplate>
-                <li class="flex justify-between gap-x-6 py-5">
-                    <div class="flex min-w-0 gap-x-4">
-                        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                        <div class="min-w-0 flex-auto">
-                            <p class="text-sm font-semibold leading-6 text-gray-900"><%# Eval("ProductName") %></p>
-                            <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%# Eval("ProductDescription") %></p>
-                            <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%# Eval("Stock") %></p>
-                            <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%# Eval("MinStockLevel") %></p>
-                            <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%# RestoWebClient.UnitPriceConverter.Convert((decimal)Eval("UnitPrice")) %></p>
-                        </div>
-                    </div>
-                    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                        <p runat="server" id="pRoleId" class="text-sm leading-6 text-gray-900"><%# RestoWebClient.ProductCategoryConverter.Convert((int)(Eval("ProductCategoryId"))) %></p>
-                    </div>
-                </li>
-            </ItemTemplate>
-        </asp:Repeater>
-    </ul>
+    <div class="bg-blue-950 p-4 text-white">
+        <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold">Lista de Productos</h2>
+            <div class="flex space-x-4">
+                <asp:Button ID="AddProduct" CssClass="bg-purple-400 text-white px-4 py-2 rounded" runat="server" Text="Agregar Producto" />
+                <asp:Button ID="UpdateProduct" CssClass="bg-purple-400 text-white px-4 py-2 rounded" runat="server" Text="Modificar Producto" />
+                <asp:Button ID="DeleteProduct" CssClass="bg-red-500 text-white px-4 py-2 rounded" runat="server" Text="Eliminar Producto" />
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-stone-200 p-4 shadow-md rounded-md overflow-x-auto">
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <th class="text-left text-dark">Nombre</th>
+                    <th class="text-left text-dark">Descripción</th>
+                    <th class="text-left text-dark">Stock</th>
+                    <th class="text-left text-dark">Stock Mínimo</th>
+                    <th class="text-left text-dark">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <asp:Repeater runat="server" ID="ProductList">
+                    <ItemTemplate>
+                        <tr>
+                            <td class="text-sm font-semibold leading-6 text-gray-900"><%# Eval("ProductName") %></td>
+                            <td class="mt-1 truncate text-xs leading-5 text-gray-500"><%# Eval("ProductDescription") %></td>
+                            <td class="mt-1 truncate text-xs leading-5 text-gray-500"><%# Eval("Stock") %></td>
+                            <td class="mt-1 truncate text-xs leading-5 text-gray-500"><%# Eval("MinStockLevel") %></td>
+                            <td class="mt-1 truncate text-xs leading-5 text-gray-500"><%# RestoWebClient.UnitPriceConverter.Convert((decimal)Eval("UnitPrice")) %></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </tbody>
+        </table>
+    </div>
 </asp:Content>
