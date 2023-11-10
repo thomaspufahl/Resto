@@ -15,6 +15,16 @@ namespace RestoWebClient
             if (SessionManager.IsLogged) { 
             
                 WelcomeMessage.InnerText = "!Bienvenido " + RestoManager.Security.LoggedUser.FirstName + "!";
+                
+                if (!SessionManager.IsLoggedAsManager)
+                {
+                    DivEmployee.Visible = false;
+                    DivProduct.Visible = false;
+                    DivReport.Visible = false;
+
+                    
+                    DivOrder.Attributes["class"] = "absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-indigo-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg";
+                }
             
             }
 

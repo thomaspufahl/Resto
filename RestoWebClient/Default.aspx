@@ -7,18 +7,18 @@
         <p runat="server" id="WelcomeMessage" class="font-bold  text-7xl text-center text-white italic"></p>
     </div>
     <div class="relative h-screen">
-        <div class="grid grid-cols-2 gap-4">
-            <div class="absolute top-40 left-80 bg-blue-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl text text-gray-800 italic " Onclick="Employee_Click" Text="Empleados" runat="server" />
+        <div runat="server" id="DivContenedor" class="grid grid-cols-2 gap-4">
+            <div runat="server" id="DivEmployee" class="absolute top-40 left-80 bg-blue-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
+                <asp:Button class="py-4 px-8 text-3xl text text-gray-800 italic uppercase font-bold " Onclick="Employee_Click" Text="Empleados" runat="server" />
             </div>
-            <div class="absolute top-40 right-80 bg-indigo-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl text-gray-800 italic" Onclick="Products_Click" Text="Productos" runat="server" />
+            <div runat="server" id="DivProduct" class="absolute top-40 right-80 bg-indigo-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
+                <asp:Button class="py-4 px-8 text-3xl text-gray-800 italic uppercase font-bold " Onclick="Products_Click" Text="Productos" runat="server" />
             </div>
-            <div class="absolute bottom-60 left-80 bg-purple-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl  text-gray-800 italic" Onclick="Orders_Click" Text="Pedidos" runat="server" />
+            <div runat="server" id="DivOrder" class="absolute bottom-60 left-80 bg-purple-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
+                <asp:Button class="py-4 px-8 text-3xl  text-gray-800 italic uppercase font-bold "  Onclick="Orders_Click" Text="Pedidos" runat="server" />
             </div>
-            <div class="absolute bottom-60 right-80 bg-violet-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl text-gray-800 italic" Onclick="Reports_Click" Text="Reportes" runat="server" />
+            <div runat="server" id="DivReport" class="absolute bottom-60 right-80 bg-violet-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
+                <asp:Button class="py-4 px-8 text-3xl text-gray-800 italic uppercase font-bold " Onclick="Reports_Click" Text="Reportes" runat="server" />
 
             </div>
         </div>
