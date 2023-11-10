@@ -26,5 +26,10 @@ namespace RestoWebClient
                 Response.Redirect("Default.aspx");
             }
         }
+
+        protected void BtnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterForm.aspx");
+        }
     }
 }
