@@ -12,6 +12,8 @@ namespace RestoWebClient
         private readonly Router Router = new Router();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             System.Diagnostics.Debug.WriteLine($"Resto.Master.cs: Page_Load: IsLogged: {SessionManager.IsLogged}");
             string name = SessionManager.IsLogged ? SessionManager.LoggedUser.FirstName : "No hay nadie logeado";
             System.Diagnostics.Debug.WriteLine($"Resto.Master.cs: Page_Load: LoggedUser: {name}");

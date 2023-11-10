@@ -5,6 +5,13 @@
 <html>
 <head runat="server">
     <title></title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1614852206732-6728910dc175?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover; /* Para cubrir toda la pantalla */
+            /* Otras propiedades de fondo si es necesario */
+        }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,11 +19,11 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav class="flex items-center justify-between p-6 lg:px-8 bg-black" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="/" class="-m-1.5 p-1.5">
                         <span class="sr-only">Resto</span>
-                        <img class="h-8 w-auto" src="https://imgs.search.brave.com/gmtEEu75E7CP0ztynvnL2aIKDAtD2fTUMriEdDZU0Z4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvOC9SZXN0/YXVyYW50LUxvZ28t/UE5HLUZyZWUtSW1h/Z2UucG5n" style= "width: 40px; height:  50px  "   alt="">
+                        <img class="h-8 w-auto " src="https://imgs.search.brave.com/gmtEEu75E7CP0ztynvnL2aIKDAtD2fTUMriEdDZU0Z4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvOC9SZXN0/YXVyYW50LUxvZ28t/UE5HLUZyZWUtSW1h/Z2UucG5n" style= "width: 40px; height:  50px; filter: invert(100%);  "   alt="">
                     </a>
                 </div>
                 <div class="flex lg:hidden">
@@ -27,13 +34,13 @@
                         </svg>
                     </button>
                 </div>
-                <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="Employees.aspx" class="text-sm font-semibold leading-6 text-gray-900">Empleados </a>
-                    <a href="Products.aspx" class="text-sm font-semibold leading-6 text-gray-900">Productos</a>
-                    <a href="Orders.aspx" class="text-sm font-semibold leading-6 text-gray-900">Pedidos</a>
-                    <a href="Reports.aspx" class="text-sm font-semibold leading-6 text-gray-900">Reportes</a>
+                <div class="hidden lg:flex lg:gap-x-12" >
+                    <a href="Employees.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Empleados </a>
+                    <a href="Products.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Productos</a>
+                    <a href="Orders.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Pedidos</a>
+                    <a href="Reports.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Reportes</a>
                 </div>
-                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end" style="filter: invert(100%);">
                     <a href="LoginForm.aspx" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
                     <asp:Button Text="Logout" ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="px-5"/>
                 </div>

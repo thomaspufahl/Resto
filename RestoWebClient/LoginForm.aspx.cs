@@ -23,6 +23,7 @@ namespace RestoWebClient
             if (SessionManager.IsLogged)
             {
                 System.Diagnostics.Debug.WriteLine(SessionManager.LoggedUser.FirstName);
+                Response.Redirect("Default.aspx");
             }
         }
     }
