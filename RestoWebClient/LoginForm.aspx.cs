@@ -27,9 +27,6 @@ namespace RestoWebClient
             }
         }
 
-        protected void BtnRegister_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RegisterForm.aspx");
-        }
+        
     }
 }

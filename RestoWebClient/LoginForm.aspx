@@ -22,7 +22,6 @@
                 <div>
                     <asp:Button ID="BtnLogin" Text="Sign in" runat="server" OnClick="BtnLogin_Click" CssClass="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"/>
                     
-                    <asp:Button ID="BtnRegister" Text="Register" runat="server" OnClick="BtnRegister_Click" CssClass="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-2"/>
                 </div>
             </div>
         </div>
