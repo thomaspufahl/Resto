@@ -12,6 +12,14 @@ namespace RestoWebClient
         private readonly Router Router = new Router();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (SessionManager.IsLogged)
+            {
+                Login.Visible = false;
+            }
+            else
+            {
+                btnLogout.Visible = false;
+            }
 
             Router.AuthorizeNavigation(HttpContext.Current.Request.Url.AbsolutePath.Substring(1));
         }
@@ -19,6 +27,12 @@ namespace RestoWebClient
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             SessionManager.Logout();
+        }
+
+        protected void Login_Click(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("LoginForm.aspx");
         }
     }
 }

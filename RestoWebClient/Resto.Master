@@ -38,7 +38,8 @@
                     <p class = "text-violet-400 text-5xl font-mono italic uppercase" >Resto</p>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end" style="filter: invert(100%);">
-                    <a href="LoginForm.aspx" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+                    <asp:Button ID="Login" CssClass="text-sm font-semibold leading-6 text-gray-900"  Onclick="Login_Click" runat="server" Text="Log in" />
+                    &nbsp;
                     <asp:Button Text="Logout" ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="text-sm font-semibold leading-6 text-gray-900"/>
                 </div>
             </nav>
