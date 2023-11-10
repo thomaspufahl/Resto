@@ -3,24 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>Employees</h2>
-    <a href="EmployeeForm.aspx">employee form</a>
-    <ul role="list" class="divide-y divide-gray-100">
+    <div class="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg mt-10">
         <asp:Repeater runat="server" ID="EmployeeList">
             <ItemTemplate>
-                <li class="flex justify-between gap-x-6 py-5">
-                    <div class="flex min-w-0 gap-x-4">
-                        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                        <div class="min-w-0 flex-auto">
-                            <p class="text-sm font-semibold leading-6 text-gray-900"><%# Eval("FirstName") %> <%# Eval("LastName") %></p>
-                            <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%# Eval("EmployeeNumber") %></p>
-                        </div>
+                <div class="flex flex-col items-center p-4">
+                    <img class="object-cover w-24 h-24 rounded-full shadow" style="filter:invert(100%)" src="https://imgs.search.brave.com/gHiiofE2tuuLBNW8GHiJQVHzDD8jrTZnpxJiToZui40/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODVlNGJlYWNiMTFi/MjI3NDkxYzMzOTku/cG5n" alt="Person" />
+                    <div class="flex flex-col justify-center mt-2 text-center">
+                        <p class="text-lg font-bold text-white"><%# Eval("FirstName") %> <%# Eval("LastName") %></p>
+                        <p class="mb-4 text-xs text-white"><%# Eval("EmployeeNumber") %></p>                    
+                        <p runat="server" id="pRoleId" class="text-sm leading-6 text-white"><%# RestoWebClient.RoleConverter.Convert((int) Eval("RoleId")).ToUpper() %></p>
                     </div>
-                    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                        <p runat="server" id="pRoleId" class="text-sm leading-6 text-gray-900"><%# RestoWebClient.RoleConverter.Convert((int)(Eval("RoleId"))).ToUpperInvariant() %></p>
-                    </div>
-                </li>
+                </div>
             </ItemTemplate>
         </asp:Repeater>
-    </ul>
+    </div>
 </asp:Content>
