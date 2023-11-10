@@ -22,5 +22,25 @@ namespace RestoWebClient
           
 
         }
+
+        protected void Employee_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Employees.aspx");
+        }
+
+        protected void Products_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Products.aspx");
+        }
+
+        protected void Orders_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Orders.aspx");
+        }
+
+        protected void Reports_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Reports.aspx");
+        }
     }
 }
