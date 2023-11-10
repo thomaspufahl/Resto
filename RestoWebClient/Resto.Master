@@ -35,10 +35,7 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12" >
-                    <a href="Employees.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Empleados </a>
-                    <a href="Products.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Productos</a>
-                    <a href="Orders.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Pedidos</a>
-                    <a href="Reports.aspx" class="text-sm font-semibold leading-6 text-white underline decoration-sky-500">Reportes</a>
+                    <p class = "text-violet-400 text-5xl font-mono italic uppercase" >Resto</p>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end" style="filter: invert(100%);">
                     <a href="LoginForm.aspx" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
