@@ -17,5 +17,17 @@ namespace RestoWebClient
                 ProductList.DataBind();
             }
         }
+
+        protected void UpdateProduct_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int id = Convert.ToInt32(btn.CommandArgument);
+            Router.RedirectTo(RouteName.PRODUCTFORM, "id", id);
+        }
+
+        protected void AddProduct_Click(object sender, EventArgs e)
+        {
+            Router.RedirectTo(RouteName.PRODUCTFORM);
+        }
     }
 }
