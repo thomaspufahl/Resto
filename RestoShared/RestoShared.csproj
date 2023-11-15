@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\OrderStatusDTO.cs" />
     <Compile Include="DTO\ProductCategoryDTO.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="IRestoDataManager.cs" />
     <Compile Include="IRestoSecurityManager.cs" />
     <Compile Include="ITable\IEmployee.cs" />
+    <Compile Include="ITable\IOrderStatus.cs" />
     <Compile Include="ITable\IProduct.cs" />
     <Compile Include="ITable\IProductCategory.cs" />
     <Compile Include="ITable\IRole.cs" />

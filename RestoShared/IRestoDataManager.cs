@@ -13,5 +13,6 @@ namespace RestoShared
         IEmployee Employee { get; }
         IProductCategory ProductCategory { get; }
         IProduct Product { get; }
+        IOrderStatus OrderStatus { get; }
     }
 }
