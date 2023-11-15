@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestoShared.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,21 @@ namespace RestoWebClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["id"] != null)
+                {
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
+                    EmployeeDTO emp = SessionManager.EmployeeById(id);
 
+                    if (emp != null) 
+                    { 
+                        firstName.Value = emp.FirstName;
+                        lastName.Value = emp.LastName;
+                        employeeNumber.Value = emp.EmployeeNumber;
+                    }
+                }
+            }
         }
     }
 }

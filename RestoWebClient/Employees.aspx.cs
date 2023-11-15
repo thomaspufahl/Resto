@@ -18,5 +18,17 @@ namespace RestoWebClient
                 EmployeeList.DataBind();
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Router.RedirectTo(RouteName.EMPLOYEEFORM);
+        }
+
+        protected void btnModify_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int id = Convert.ToInt32(btn.CommandArgument);
+            Router.RedirectTo(RouteName.EMPLOYEEFORM, "id", id);
+        }
     }
 }
