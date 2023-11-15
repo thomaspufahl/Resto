@@ -177,5 +177,9 @@ namespace RestoWebClient
 
             return true;
         }
+        public static ProductDTO ProductById(int id)
+        {
+            return ProductList.Where(x => x.ProductId == id).FirstOrDefault();
+        }
     }
 }
