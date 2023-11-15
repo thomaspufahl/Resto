@@ -78,21 +78,21 @@ namespace RestoWebClient
                 }
             }
         }
-        public void RedirectTo(RouteName route)
+        public static void RedirectTo(RouteName route)
         {
             HttpContext.Current.Response.Redirect(RouteUrl[route], false);
         }
 
         // Test if this works
-        public void RedirectTo(RouteName route, string query)
+        public static void RedirectTo(RouteName route, string query)
         {
             HttpContext.Current.Response.Redirect(RouteUrl[route] + query, false);
         }
-        public void RedirectTo(RouteName route, string query, string queryValue)
+        public static void RedirectTo(RouteName route, string query, string queryValue)
         {
             HttpContext.Current.Response.Redirect(RouteUrl[route] + "?" + query + "=" + queryValue, false);
         }
-        public void RedirectTo(RouteName route, string query, int queryValue)
+        public static void RedirectTo(RouteName route, string query, int queryValue)
         {
             HttpContext.Current.Response.Redirect(RouteUrl[route] + "?" + query + "=" + queryValue, false);
         }
