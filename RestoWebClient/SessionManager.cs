@@ -125,6 +125,10 @@ namespace RestoWebClient
 
             return true;
         }
+        public static EmployeeDTO EmployeeById(int id)
+        {
+            return EmployeeList.Where(x => x.EmployeeId == id).FirstOrDefault();
+        }
 
         // ProductCategory
         public static List<ProductCategoryDTO> ProductCategoryList
