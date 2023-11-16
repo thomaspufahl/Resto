@@ -14,5 +14,6 @@ namespace RestoShared
         IProductCategory ProductCategory { get; }
         IProduct Product { get; }
         IOrderStatus OrderStatus { get; }
+        IOrder Order { get; }
     }
 }
