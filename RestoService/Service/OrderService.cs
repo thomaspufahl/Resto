@@ -89,13 +89,13 @@ namespace RestoService.Service
                 {
                     OrderList.Add(new OrderDTO
                     {
-                        OrderNumber = Convert.ToInt64(0),
-                        EmployeeId = Convert.ToInt32(1),
-                        TableNumber = Convert.ToByte(2),
-                        OrderDate = Convert.ToDateTime(3),
-                        OrderStatusId = Convert.ToInt32(4),
-                        UpdatedAt = Convert.ToDateTime(5),
-                        IsActive = Convert.ToBoolean(6)
+                        OrderNumber = db.Reader.GetInt64(0),
+                        EmployeeId = db.Reader.GetInt32(1),
+                        TableNumber = db.Reader.GetByte(2),
+                        OrderDate = db.Reader.GetDateTime(3),
+                        OrderStatusId = db.Reader.GetInt32(4),
+                        UpdatedAt = db.Reader.GetDateTime(5),
+                        IsActive = db.Reader.GetBoolean(6)
                     });
                 }
 
@@ -128,13 +128,13 @@ namespace RestoService.Service
                 (
                     new OrderDTO
                     {
-                        OrderNumber = Convert.ToInt64(0),
-                        EmployeeId = Convert.ToInt32(1),
-                        TableNumber = Convert.ToByte(2),
-                        OrderDate = Convert.ToDateTime(3),
-                        OrderStatusId = Convert.ToInt32(4),
-                        UpdatedAt = Convert.ToDateTime(5),
-                        IsActive = Convert.ToBoolean(6)
+                        OrderNumber = db.Reader.GetInt64(0),
+                        EmployeeId = db.Reader.GetInt32(1),
+                        TableNumber = db.Reader.GetByte(2),
+                        OrderDate = db.Reader.GetDateTime(3),
+                        OrderStatusId = db.Reader.GetInt32(4),
+                        UpdatedAt = db.Reader.GetDateTime(5),
+                        IsActive = db.Reader.GetBoolean(6)
                     }
                 );
             }
