@@ -17,6 +17,7 @@ namespace RestoService
         private ProductService _ProductService;
         private OrderStatusService _OrderStatusService;
         private OrderService _OrderService;
+        private OrderItemService _OrderItemService;
 
         public IRole Role { get { return _RoleService; } }
         public IEmployee Employee { get { return _EmployeeService; } }
@@ -24,6 +25,7 @@ namespace RestoService
         public IProduct Product { get { return _ProductService; } }
         public IOrderStatus OrderStatus { get { return _OrderStatusService; } }
         public IOrder Order { get { return _OrderService; } }
+        public IOrderItem OrderItem { get { return _OrderItemService; } }
 
         public RestoDataManager()
         {
@@ -33,6 +35,7 @@ namespace RestoService
             _ProductService = new ProductService();
             _OrderStatusService = new OrderStatusService();
             _OrderService = new OrderService();
+            _OrderItemService = new OrderItemService();
         }
     }
 }
