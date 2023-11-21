@@ -43,11 +43,11 @@
                     <asp:Button Text="Logout" ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="text-sm font-semibold leading-6 text-gray-900"/>
                 </div>
             </nav>
-            <div class="px-4">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
         </header>
+        <main class="mx-auto mt-2 p-5">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+            </asp:ContentPlaceHolder>
+        </main>
     </form>
 </body>
 </html>
