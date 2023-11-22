@@ -16,5 +16,6 @@ namespace RestoShared
         IOrderStatus OrderStatus { get; }
         IOrder Order { get; }
         IOrderItem OrderItem { get; }
+        IRestoTable RestoTable { get; }
     }
 }
