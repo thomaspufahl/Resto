@@ -79,14 +79,13 @@ namespace RestoService.Service
             {
                 db.SetProc("getOrderItem");
 
-
                 db.ExecuteReader();
 
                 while (db.Reader.Read())
                 {
                     orderItemList.Add(new OrderItemDTO
                     {
-                        OrderItemId = db.Reader.GetInt32(0),
+                        OrderItemId = db.Reader.GetInt64(0),
                         OrderNumber = db.Reader.GetInt64(1),
                         ProductId = db.Reader.GetInt32(2),
                         Quantity = db.Reader.GetByte(3),
@@ -121,7 +120,7 @@ namespace RestoService.Service
 
                 return ServiceResponse<OrderItemDTO>.Success(new OrderItemDTO
                 {
-                    OrderItemId = db.Reader.GetInt32(0),
+                    OrderItemId = db.Reader.GetInt64(0),
                     OrderNumber = db.Reader.GetInt64(1),
                     ProductId = db.Reader.GetInt32(2),
                     Quantity = db.Reader.GetByte(3),
@@ -151,7 +150,7 @@ namespace RestoService.Service
 
                 return ServiceResponse<OrderItemDTO>.Success(new OrderItemDTO
                 {
-                    OrderItemId = db.Reader.GetInt32(0),
+                    OrderItemId = db.Reader.GetInt64(0),
                     OrderNumber = db.Reader.GetInt64(1),
                     ProductId = db.Reader.GetInt32(2),
                     Quantity = db.Reader.GetByte(3),
