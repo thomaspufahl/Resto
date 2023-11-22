@@ -18,7 +18,7 @@ namespace RestoShared.ITable
         bool IsActive { get; }
 
         void Initialize(OrderDTO orderDTO);
-        ServiceResponse<int> Add();
+        ServiceResponse<long> Add();
         ServiceResponse<List<OrderDTO>> GetAll();
         ServiceResponse<OrderDTO> GetByOrderNumber(long orderNumber);
         ServiceResponse<int> Update();

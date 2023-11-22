@@ -48,7 +48,7 @@ namespace RestoService.Service
 
             _IsInitialized = true;
         }
-        public ServiceResponse<int> Add()
+        public ServiceResponse<long> Add()
         {
             try
             {
@@ -60,15 +60,15 @@ namespace RestoService.Service
                 db.SetParam("@tableNumber", TableNumber);
                 db.SetParam("@orderStatusId", OrderStatusId);
 
-                int identity = Convert.ToInt32(db.ExecuteScalar());
+                long identity = Convert.ToInt64(db.ExecuteScalar());
 
-                if (identity <= 0) return ServiceResponse<int>.Fail("Order not added");
+                if (identity <= 0) return ServiceResponse<long>.Fail("Order not added");
 
-                return ServiceResponse<int>.Success(identity);
+                return ServiceResponse<long>.Success(identity);
             }
             catch (Exception ex)
             {
-                return ServiceResponse<int>.Fail(ex.Message);
+                return ServiceResponse<long>.Fail(ex.Message);
             }
             finally
             {
