@@ -78,6 +78,12 @@ namespace RestoWebClient
                 }
             }
         }
+
+        public static void RedirectOnError()
+        {
+            HttpContext.Current.Response.Redirect(RouteUrl[RouteName.NOT_FOUND]);
+        }
+
         public static void RedirectTo(RouteName route)
         {
             HttpContext.Current.Response.Redirect(RouteUrl[route], false);
