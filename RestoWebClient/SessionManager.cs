@@ -21,6 +21,24 @@ namespace RestoWebClient
             }
         }
 
+        // GENERAL
+        public static void Add(string key, object value)
+        {
+            Session.Add(key, value);
+        }
+        public static void Remove(string key)
+        {
+            Session.Remove(key);
+        }
+        public static object Get(string key)
+        {
+            return Session[key];
+        }
+        public static bool Contains(string key)
+        {
+            return Session[key] != null;
+        }
+
         // SECURITY
         public static EmployeeDTO LoggedUser
         {
