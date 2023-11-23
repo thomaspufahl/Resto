@@ -96,5 +96,9 @@ namespace RestoWebClient
         {
             HttpContext.Current.Response.Redirect(RouteUrl[route] + "?" + query + "=" + queryValue, false);
         }
+        public static void RedirectTo(RouteName route, string query, long queryValue)
+        {
+            HttpContext.Current.Response.Redirect(RouteUrl[route] + "?" + query + "=" + queryValue, false);
+        }
     }
 }
