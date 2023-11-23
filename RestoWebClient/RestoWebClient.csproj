@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter\ProductCategoryConverter.cs" />
+    <Compile Include="Converter\ProductIdConverter.cs" />
     <Compile Include="Converter\UnitPriceConverter.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
