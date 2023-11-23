@@ -199,5 +199,121 @@ namespace RestoWebClient
         {
             return ProductList.Where(x => x.ProductId == id).FirstOrDefault();
         }
+
+        // OrderStatus
+        public static List<OrderStatusDTO> OrderStatusList
+        {
+            get
+            {
+                if (Session["OrderStatusList"] == null)
+                {
+                    if (!LoadOrderStatusList()) return null;
+                }
+
+                return (List<OrderStatusDTO>)Session["OrderStatusList"];
+            }
+        }
+        public static bool LoadOrderStatusList()
+        {
+            var response = RestoManager.Data.OrderStatus.GetAll();
+
+            if (!response.IsSuccess) return false;
+
+            Session["OrderStatusList"] = response.Data;
+
+            return true;
+        }
+        public static OrderStatusDTO OrderStatusById(int id)
+        {
+            return OrderStatusList.Where(x => x.OrderStatusId == id).FirstOrDefault();
+        }
+
+        // Order
+        public static List<OrderDTO> OrderList
+        {
+            get
+            {
+                if (Session["OrderList"] == null)
+                {
+                    if (!LoadOrderList()) return null;
+                }
+
+                return (List<OrderDTO>)Session["OrderList"];
+            }
+        }
+        public static bool LoadOrderList()
+        {
+            var response = RestoManager.Data.Order.GetAll();
+
+            if (!response.IsSuccess) return false;
+
+            Session["OrderList"] = response.Data;
+
+            return true;
+        }
+        public static OrderDTO OrderByOrderNumber(long orderNumber)
+        {
+            return OrderList.Where(x => x.OrderNumber == orderNumber).FirstOrDefault();
+        }
+
+        // OrderItem
+        public static List<OrderItemDTO> OrderItemList
+        {
+            get
+            {
+                if (Session["OrderItemList"] == null)
+                {
+                    if (!LoadOrderItemList()) return null;
+                }
+
+                return (List<OrderItemDTO>)Session["OrderItemList"];
+            }
+        }
+        public static bool LoadOrderItemList()
+        {
+            var response = RestoManager.Data.OrderItem.GetAll();
+
+            if (!response.IsSuccess) return false;
+
+            Session["OrderItemList"] = response.Data;
+
+            return true;
+        }
+        public static List<OrderItemDTO> OrderItemListByOrderNumber(long orderNumber)
+        {
+            return OrderItemList.FindAll(x => x.OrderNumber == orderNumber);
+        }
+        public static OrderItemDTO OrderItemById(long id)
+        {
+            return OrderItemList.Where(x => x.OrderItemId == id).FirstOrDefault();
+        }
+
+        // RestoTable
+        public static List<RestoTableDTO> RestoTableList
+        {
+            get
+            {
+                if (Session["RestoTableList"] == null)
+                {
+                    if (!LoadRestoTableList()) return null;
+                }
+
+                return (List<RestoTableDTO>)Session["RestoTableList"];
+            }
+        }
+        public static bool LoadRestoTableList()
+        {
+            var response = RestoManager.Data.RestoTable.GetAll();
+
+            if (!response.IsSuccess) return false;
+
+            Session["RestoTableList"] = response.Data;
+
+            return true;
+        }
+        public static RestoTableDTO RestoTableById(byte tableNumber)
+        {
+            return RestoTableList.Where(x => x.TableNumber == tableNumber).FirstOrDefault();
+        }
     }
 }
