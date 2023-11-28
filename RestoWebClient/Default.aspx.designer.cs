@@ -15,57 +15,39 @@ namespace RestoWebClient
     {
 
         /// <summary>
-        /// WelcomeMessage control.
+        /// BtnEmployees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl WelcomeMessage;
+        protected global::System.Web.UI.WebControls.Button BtnEmployees;
 
         /// <summary>
-        /// DivContenedor control.
+        /// BtnProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivContenedor;
+        protected global::System.Web.UI.WebControls.Button BtnProducts;
 
         /// <summary>
-        /// DivEmployee control.
+        /// BtnOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivEmployee;
+        protected global::System.Web.UI.WebControls.Button BtnOrders;
 
         /// <summary>
-        /// DivProduct control.
+        /// BtnReports control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivProduct;
-
-        /// <summary>
-        /// DivOrder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivOrder;
-
-        /// <summary>
-        /// DivReport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivReport;
+        protected global::System.Web.UI.WebControls.Button BtnReports;
     }
 }

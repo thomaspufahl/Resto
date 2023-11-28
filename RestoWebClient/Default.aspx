@@ -3,25 +3,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="flex items-center justify-center mt-7">
-        <p runat="server" id="WelcomeMessage" class="font-bold  text-7xl text-center text-white italic"></p>
-    </div>
-    <div class="relative h-screen">
-        <div runat="server" id="DivContenedor" class="grid grid-cols-2 gap-4">
-            <div runat="server" id="DivEmployee" class="absolute top-40 left-80 bg-blue-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl text text-gray-800 italic uppercase font-bold " Onclick="Employee_Click" Text="Empleados" runat="server" />
-            </div>
-            <div runat="server" id="DivProduct" class="absolute top-40 right-80 bg-indigo-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl text-gray-800 italic uppercase font-bold " Onclick="Products_Click" Text="Productos" runat="server" />
-            </div>
-            <div runat="server" id="DivOrder" class="absolute bottom-60 left-80 bg-purple-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl  text-gray-800 italic uppercase font-bold "  Onclick="Orders_Click" Text="Pedidos" runat="server" />
-            </div>
-            <div runat="server" id="DivReport" class="absolute bottom-60 right-80 bg-violet-500 text-white p-6 text-center box-border border-4 w-1/4 rounded-lg">
-                <asp:Button class="py-4 px-8 text-3xl text-gray-800 italic uppercase font-bold " Onclick="Reports_Click" Text="Reportes" runat="server" />
-
-            </div>
-        </div>
-    </div>
-
+    <section class="flex flex-wrap justify-center mt-32 mx-36 gap-56 gap-y-32 text-slate-300">
+        <asp:Button runat="server" ID="BtnEmployees"
+            CssClass="w-96 h-36 bg-blue-700 rounded-lg text-3xl font-bold hover:bg-blue-800 shadow-md ease-in-out transition-all hover:scale-110"
+            Text="Employees"
+            OnClick="Employee_Click" />
+        <asp:Button runat="server" ID="BtnProducts"
+            CssClass="w-96 h-36 bg-blue-700 rounded-lg text-3xl font-bold hover:bg-blue-800 shadow-md ease-in-out transition-all hover:scale-110"
+            Text="Products"
+            OnClick="Products_Click" />
+        <asp:Button runat="server" ID="BtnOrders"
+            CssClass="w-96 h-36 bg-blue-700 rounded-lg text-3xl font-bold hover:bg-blue-800 shadow-md ease-in-out transition-all hover:scale-110"
+            Text="Orders"
+            OnClick="Orders_Click" />
+        <asp:Button runat="server" ID="BtnReports"
+            CssClass="w-96 h-36 bg-blue-700 rounded-lg text-3xl font-bold hover:bg-blue-800 shadow-md ease-in-out transition-all hover:scale-110"
+            Text="Reports"
+            OnClick="Reports_Click" />
+    </section>
 </asp:Content>
