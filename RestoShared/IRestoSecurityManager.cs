@@ -21,7 +21,7 @@ namespace RestoShared
         AccessLevel LoggedAccessLevel { get; }
 
         ServiceResponse<bool> Login(string employeeNumber);
-        //ServiceResponse<bool> Logout();
+        ServiceResponse<bool> Logout();
         bool IsAuth(AccessLevel accessLevelToValidate);
         bool IsAuth(AccessLevel loggedAccessLevel, AccessLevel accessLevelToValidate);
     }

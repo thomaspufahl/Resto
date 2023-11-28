@@ -84,13 +84,17 @@ namespace RestoWebClient
         }
         public static bool Logout()
         {
-            //RestoManager.Security.Logout();
+            RestoManager.Security.Logout();
             if (!IsLogged) return false;
 
             Session["LoggedUser"] = null;
             Session["IsLoggedAsManager"] = false;
             Session["IsLogged"] = false;
             Session["LoggedAccessLevel"] = AccessLevel.NOT_LOGGED;
+
+            Session.Clear();
+            Session.Abandon();
+            Session.RemoveAll();
 
             return true;
         }
