@@ -72,7 +72,7 @@
     <Content Include="404.aspx" />
     <Content Include="EmployeeForm.aspx" />
     <Content Include="Employees.aspx" />
-    <Content Include="LoginForm.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="OrderItemForm.aspx" />
     <Content Include="Orders.aspx" />
     <Content Include="ProductForm.aspx" />
@@ -116,12 +116,12 @@
     <Compile Include="Employees.aspx.designer.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.aspx.cs">
-      <DependentUpon>LoginForm.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginForm.aspx.designer.cs">
-      <DependentUpon>LoginForm.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderItemForm.aspx.cs">
       <DependentUpon>OrderItemForm.aspx</DependentUpon>

@@ -52,7 +52,7 @@ namespace RestoWebClient
         {
             { RouteName.ROOT, "default.aspx" },
             { RouteName.DEFAULT, "Default.aspx"},
-            { RouteName.LOGIN, "LoginForm.aspx"},
+            { RouteName.LOGIN, "Login.aspx"},
             { RouteName.NOT_FOUND, "404.aspx"},
             { RouteName.REGISTER, "RegisterForm.aspx"},
             { RouteName.ORDERS, "Orders.aspx" },
