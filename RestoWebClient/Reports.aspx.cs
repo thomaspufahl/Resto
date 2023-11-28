@@ -11,7 +11,10 @@ namespace RestoWebClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Title = "Resto | Reports";
+            }
         }
     }
 }
