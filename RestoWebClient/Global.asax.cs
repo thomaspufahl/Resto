@@ -22,7 +22,8 @@ namespace RestoWebClient
                 HttpException httpEx = ex as HttpException;
                 if (httpEx.GetHttpCode() == 404)
                 {
-                    Router.RedirectOnError();
+                    Server.ClearError();
+                    Server.Transfer("404.aspx");
                 }
             }
         }
