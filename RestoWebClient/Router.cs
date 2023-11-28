@@ -64,7 +64,15 @@ namespace RestoWebClient
             { RouteName.REPORTS, "Reports.aspx" },
         };
 
-        public void AuthorizeNavigation(string path)
+        public static string CurrentRoute
+        {
+            get
+            {
+                return HttpContext.Current.Request.Url.AbsolutePath.Substring(1);
+            }            
+        }
+
+        public void AuthNavigation()
         {   
             // check if path exists in RouteUrl
             foreach (KeyValuePair<RouteName, string> route in RouteUrl)
