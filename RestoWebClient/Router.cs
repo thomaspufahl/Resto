@@ -77,7 +77,7 @@ namespace RestoWebClient
             // check if path exists in RouteUrl
             foreach (KeyValuePair<RouteName, string> route in RouteUrl)
             {
-                if (route.Value == path)
+                if (route.Value == CurrentRoute)
                 {
                     if (RestoManager.Security.IsAuth(SessionManager.LoggedAccessLevel, RouteAuth[route.Key]))
                     {
