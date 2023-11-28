@@ -12,27 +12,33 @@ namespace RestoWebClient
         private readonly Router Router = new Router();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (SessionManager.IsLogged)
+            if (!IsPostBack)
             {
-                Login.Visible = false;
-            }
-            else
-            {
-                btnLogout.Visible = false;
-            }
+                LinkDashboard.PostBackUrl = Router.RouteUrl[RouteName.DEFAULT];
+                LinkOrders.PostBackUrl = Router.RouteUrl[RouteName.ORDERS];
+                LinkEmployees.PostBackUrl = Router.RouteUrl[RouteName.EMPLOYEES];
+                LinkProducts.PostBackUrl = Router.RouteUrl[RouteName.PRODUCTS];
+                LinkReports.PostBackUrl = Router.RouteUrl[RouteName.REPORTS];
 
-            Router.AuthorizeNavigation(HttpContext.Current.Request.Url.AbsolutePath.Substring(1));
+                if (!SessionManager.IsLoggedAsManager)
+                {
+                    LinkEmployees.Visible = false;
+                    LinkProducts.Visible = false;
+                    LinkReports.Visible = false;
+                }
+
+                if (SessionManager.IsLogged)
+                {
+                    loggedUser.InnerHtml = SessionManager.LoggedUser.FirstName + " " + SessionManager.LoggedUser.LastName;
+                }
+            }
+            Router.AuthNavigation();
         }
 
-        protected void btnLogout_Click(object sender, EventArgs e)
+        protected void BtnLogout_Click(object sender, EventArgs e)
         {
             SessionManager.Logout();
-        }
-
-        protected void Login_Click(object sender, EventArgs e)
-        {
-           
-            Response.Redirect("LoginForm.aspx");
+            Router.RedirectTo(RouteName.LOGIN);
         }
     }
 }
